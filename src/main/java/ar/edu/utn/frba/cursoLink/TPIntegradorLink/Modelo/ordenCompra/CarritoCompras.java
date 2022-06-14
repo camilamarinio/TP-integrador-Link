@@ -6,8 +6,13 @@ import java.util.List;
 public class CarritoCompras {
 	private List<Item> productos =  new ArrayList<Item>();
 	
+	
 	public void comprar() {
 		
+	}
+    
+	public void agregarProductoAlCarrito(Item item) {
+		this.productos.add(item);
 	}
 
 	public List<Item> getProductos() {
@@ -18,9 +23,7 @@ public class CarritoCompras {
 		this.productos = productos;
 	}
 	
-	public void agregarProductoAlCarrito(Item item) {
-		this.productos.add(item);
-	}
+
 	
 	
 

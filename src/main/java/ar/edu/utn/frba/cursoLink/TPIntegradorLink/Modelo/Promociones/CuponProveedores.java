@@ -27,8 +27,32 @@ public class CuponProveedores implements Promocion {
 			return 0;
 		}
 		
-		
-		
 	}
+
+	public Proveedor getProveedor() {
+		return proveedor;
+	}
+
+	public void setProveedor(Proveedor proveedor) {
+		this.proveedor = proveedor;
+	}
+
+	public double getPorcentajeDescuento() {
+		return porcentajeDescuento;
+	}
+
+	public void setPorcentajeDescuento(double porcentajeDescuento) {
+		this.porcentajeDescuento = porcentajeDescuento;
+	}
+
+	public LocalDate getFechaTermino() {
+		return fechaTermino;
+	}
+
+	public void setFechaTermino(LocalDate fechaTermino) {
+		this.fechaTermino = fechaTermino;
+	}
+	
+	
 
 }

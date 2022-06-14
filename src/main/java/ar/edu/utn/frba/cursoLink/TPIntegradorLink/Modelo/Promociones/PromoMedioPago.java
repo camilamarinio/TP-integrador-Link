@@ -11,8 +11,7 @@ public class PromoMedioPago implements Promocion {
 	}
 
 	public double aplicarPromo(OrdenDeCompra ordenDeCompra) {
-		return ordenDeCompra.totalDescuentoPromo(medioDePago.getPorcentajeDescuento());
+		return ordenDeCompra.totalDescuentoPromo(medioDePago.getPorcentajeDescuento()) ;
 	}
-
 
 }

@@ -31,6 +31,23 @@ public class Vendedor {
 		return proveedores.contains(proveedor);
 	}
 	
+	public void eliminarProducto(Producto producto) throws ProductoNoEncontradoExeption {
+		if(productos.contains(producto)) {
+			productos.remove(producto);
+		}else {
+			throw new ProductoNoEncontradoExeption("El producto no se puede eliminar , porque no es un producto del vendedor");
+		}
+	}
+	
+
+	public boolean tenemosProducto (Producto producto) {
+		return productos.contains(producto);
+	}
+	
+	public void agregarProducto(Producto producto){
+		productos.add(producto);
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -63,24 +80,6 @@ public class Vendedor {
 
 	public void setProductos(List<Producto> productos) {
 		this.productos = productos;
-	}
-
-	
-	public void agregarProducto(Producto producto){
-		productos.add(producto);
-	}
-	
-	public void eliminarProducto(Producto producto) throws ProductoNoEncontradoExeption {
-		if(productos.contains(producto)) {
-			productos.remove(producto);
-		}else {
-			throw new ProductoNoEncontradoExeption("El producto no se pued eliminar , porque no esta un producto del vendedor");
-		}
-	}
-	
-
-	public boolean tenemosProducto (Producto producto) {
-		return productos.contains(producto);
 	}
 	
 

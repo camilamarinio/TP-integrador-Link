@@ -4,8 +4,9 @@ import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Cotizador.Cotizador;
 
 public class Producto {
 	private double precio;
-	private Cotizador cotizador;
 	private int stock;
+	private Cotizador cotizador;
+	
 	
 
 	public Producto(double precio, Cotizador cotizador, int stock ) {
@@ -18,9 +19,30 @@ public class Producto {
 	public double calcularPrecio() {
 		return cotizador.calcularPrecio(precio);
 	}
-	
+
+
 	public int getStock() {
-		return stock;
+		return this.stock;
+	}
+
+
+	public double getPrecio() {
+		return precio;
+	}
+
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
+
+	public Cotizador getCotizador() {
+		return cotizador;
+	}
+
+
+	public void setCotizador(Cotizador cotizador) {
+		this.cotizador = cotizador;
 	}
 
 
@@ -28,12 +50,6 @@ public class Producto {
 		this.stock = stock;
 	}
 
-	public double getPrecio() {
-		return precio;
-	}
-	public Cotizador getCotizador() {
-		return cotizador;
-	}
 	
 
 }

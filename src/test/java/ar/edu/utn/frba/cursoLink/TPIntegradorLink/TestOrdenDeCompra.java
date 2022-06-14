@@ -1,6 +1,6 @@
 package ar.edu.utn.frba.cursoLink.TPIntegradorLink;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals; 
 
 
 import java.time.LocalDate;
@@ -15,11 +15,10 @@ import org.junit.jupiter.api.Test;
 
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Cotizador.CotizadorPesos;
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Promociones.CuponProveedores;
-import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Promociones.Efectivo;
+import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Promociones.MedioDePago;
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Promociones.Membresia;
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Promociones.PromoMedioPago;
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Promociones.Promocion;
-import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Promociones.Tarjeta;
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Usuarios.Cliente;
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Usuarios.TipoDocumento;
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Usuarios.Vendedor;
@@ -59,12 +58,13 @@ public class TestOrdenDeCompra {
 	List <Cliente> miembrosClientes = Arrays.asList(camila);
 	Promocion promoMembre1 = new Membresia(miembrosClientes,0.2);
 	
-	Promocion promoEfectivo = new PromoMedioPago(new Efectivo(0.4));
-	Promocion promoTarjeta = new PromoMedioPago(new Tarjeta(0.1));
+	Promocion promoEfectivo = new PromoMedioPago(new MedioDePago(0.4));
+	Promocion promoTarjeta = new PromoMedioPago(new MedioDePago(0.1));
 	
-	Promocion cuponProveedores = new CuponProveedores(proveedor , 0.3 , LocalDate.of(2022, 6, 9) );
+	//tengo que ver la fecha actual porque sino no me funciona el test
+	Promocion cuponProveedores = new CuponProveedores(proveedor , 0.3 , LocalDate.of(2022, 6, 15) );
 	Promocion cuponProveedoresVencido = new CuponProveedores(proveedor , 0.3 , LocalDate.of(2021, 6, 9) );
-	Promocion cuponProveedoresDif = new CuponProveedores(proveedorF , 0.2 , LocalDate.of(2022, 6, 9) );
+	Promocion cuponProveedoresDif = new CuponProveedores(proveedorF , 0.2 , LocalDate.of(2022, 6, 15) );
 	@BeforeEach
 	void cargarOrden1() {
 		orden1.agregarItem(item1);
@@ -78,7 +78,7 @@ public class TestOrdenDeCompra {
 		Item item2 = new Item(1, producto2, vendedor1);
 		orden2.agregarItem(item1);
 		orden2.agregarItem(item2);
-		orden1.setVendedor(vendedor1);
+		orden2.setVendedor(vendedor1);
 	}
 	
 
@@ -157,7 +157,7 @@ public class TestOrdenDeCompra {
 	}
 	
 	@Test
-	public void SeAplicaDescuentoCuponProveedoresEnSoloLosPRoductosDeEseProveedor() {
+	public void SeAplicaDescuentoCuponProveedoresEnSoloLosProductosDeEseProveedor() {
 		
 		orden2.agregarItem(itemDist);
 		orden2.agregarPromo(cuponProveedoresDif);

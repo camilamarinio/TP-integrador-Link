@@ -1,13 +1,12 @@
 package ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Usuarios;
 
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.List;
 
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.ordenCompra.CarritoCompras;
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.ordenCompra.Item;
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.ordenCompra.OrdenDeCompra;
-import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.ordenCompra.Producto;
 
 public class Cliente {
 	private String nombre;
@@ -27,7 +26,7 @@ public class Cliente {
 	}
 
 
-	public void generarOrdenDeCompra(OrdenDeCompra orden) {
+	public void cargarOrdenDeCompra(OrdenDeCompra orden) {
 		compras.add(orden);
 	}
 	

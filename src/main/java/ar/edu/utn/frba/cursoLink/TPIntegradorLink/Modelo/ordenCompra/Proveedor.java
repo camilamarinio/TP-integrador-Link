@@ -8,7 +8,6 @@ public class Proveedor {
 	private List<Producto> productos = new ArrayList<Producto>();
 	
 	
-	
 	public Proveedor(String nombre) {
 		super();
 		this.nombre = nombre;

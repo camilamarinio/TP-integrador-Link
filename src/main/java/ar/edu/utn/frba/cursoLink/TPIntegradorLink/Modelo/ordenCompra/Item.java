@@ -1,6 +1,6 @@
 package ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.ordenCompra;
 
-import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Usuarios.Vendedor;
+import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Usuarios.Vendedor; 
 
 public class Item {
 	private int cantidadProductos;
@@ -18,21 +18,32 @@ public class Item {
 
 	}
 
+
 	public double totalPorProducto() {
 		return cantidadProductos * producto.calcularPrecio();
 	}
 
+
+	
 	public int getCantidadProductos() {
 		return cantidadProductos;
 	}
 
-	public Producto getProducto() {
-		return producto;
+
+	public void setCantidadProductos(int cantidadProductos) {
+		this.cantidadProductos = cantidadProductos;
 	}
+
 
 	public void setProducto(Producto producto) {
 		this.producto = producto;
 	}
+
+
+	public Producto getProducto() {
+		return this.producto;
+	}
+
 	
 
 
