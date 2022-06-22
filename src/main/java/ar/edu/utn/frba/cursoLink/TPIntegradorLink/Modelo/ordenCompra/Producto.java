@@ -1,14 +1,31 @@
 package ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.ordenCompra;
 
+import javax.persistence.Entity;  
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+
+
+
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Cotizador.Cotizador;
 
+@Entity
+@Table(name = "productos")
 public class Producto {
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer idProducto;
+	
+	@Transient
 	private double precio;
+	@Transient
 	private int stock;
+	@Transient
 	private Cotizador cotizador;
 	
 	
-
 	public Producto(double precio, Cotizador cotizador, int stock ) {
 		this.precio = precio;
 		this.cotizador = cotizador;

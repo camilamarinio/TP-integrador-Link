@@ -11,5 +11,7 @@ class Usuario {
 	public boolean ValidarContrasenia() {
 		return contrasenia.length() >= minimosCaracPermitidos && contrasenia.length() <= maximosCaracPermitidos;
 	}
+	
+	
 
 }
