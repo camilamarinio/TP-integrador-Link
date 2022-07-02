@@ -40,8 +40,8 @@ public class TestOrdenDeCompra {
 	OrdenDeCompra orden1 = new OrdenDeCompra(camila);
 	OrdenDeCompra orden2 = new OrdenDeCompra(camila);
 	
-	Producto producto1 = new Producto(1000, new CotizadorPesos(),10);
-	Producto producto2 = new Producto(1000,new CotizadorPesos(),7);
+	Producto producto1 = new Producto(1000,10);
+	Producto producto2 = new Producto(1000,7);
 	
 	Vendedor vendedor1 = new Vendedor("juan" , "perez" , TipoDocumento.DNI , 7589372);
 
@@ -49,7 +49,7 @@ public class TestOrdenDeCompra {
 	Item item1 = new Item(3 , producto1 ,vendedor1);
 	Item item2 = new Item(2, producto2, vendedor1);
 	
-	Producto productoDist = new Producto(200, new CotizadorPesos(), 40);
+	Producto productoDist = new Producto(200, 40);
 	Item itemDist = new Item(5, productoDist, vendedor1);
 	
 	Proveedor proveedor = new Proveedor("Arcor");
@@ -62,9 +62,9 @@ public class TestOrdenDeCompra {
 	Promocion promoTarjeta = new PromoMedioPago(new MedioDePago(0.1));
 	
 	//tengo que ver la fecha actual porque sino no me funciona el test
-	Promocion cuponProveedores = new CuponProveedores(proveedor , 0.3 , LocalDate.of(2022, 6, 15) );
+	Promocion cuponProveedores = new CuponProveedores(proveedor , 0.3 , LocalDate.of(2023, 6, 15) );
 	Promocion cuponProveedoresVencido = new CuponProveedores(proveedor , 0.3 , LocalDate.of(2021, 6, 9) );
-	Promocion cuponProveedoresDif = new CuponProveedores(proveedorF , 0.2 , LocalDate.of(2022, 6, 15) );
+	Promocion cuponProveedoresDif = new CuponProveedores(proveedorF , 0.2 , LocalDate.of(2023, 6, 15) );
 	@BeforeEach
 	void cargarOrden1() {
 		orden1.agregarItem(item1);
@@ -101,7 +101,7 @@ public class TestOrdenDeCompra {
 	 
 	@Test 
 	public void NoPuedoCrearUnItemSiNoTengoStockSuficienteDelProducto() {
-		Producto producto0 = new Producto (1000, new CotizadorPesos() , 1);
+		Producto producto0 = new Producto (1000, 1);
 		
 		Assertions.assertThrows(NoHayStockExeption.class,() -> new Item(20, producto0 , vendedor1));
 	}

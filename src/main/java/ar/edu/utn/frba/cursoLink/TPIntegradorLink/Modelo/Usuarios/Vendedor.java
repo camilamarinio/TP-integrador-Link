@@ -3,15 +3,47 @@ package ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Usuarios;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.ordenCompra.Producto;
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.ordenCompra.Proveedor;
 
+@Entity
+@Table(name = "vendedor")
 public class Vendedor {
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer idVendedor;
 	private String nombre; 
 	private String apellido; 
+	@Transient
 	private TipoDocumento tipo;
 	private int numeroDoc ;
+	@OneToMany
+	@JoinColumn(name= "idVendedor")
 	private List<Proveedor> proveedores =  new ArrayList<Proveedor>();
+	
+	public Vendedor() {
+		super();
+		
+	}
+
+	public int getNumeroDoc() {
+		return numeroDoc;
+	}
+
+	public void setNumeroDoc(int numeroDoc) {
+		this.numeroDoc = numeroDoc;
+	}
+
+	@OneToMany
+	@JoinColumn(name= "idVendedor")
 	private List <Producto> productos = new ArrayList<Producto>();
 	
 	

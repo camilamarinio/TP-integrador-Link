@@ -1,40 +1,43 @@
 package ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.ordenCompra;
 
-import javax.persistence.Entity;  
+import javax.persistence.Column;
+import javax.persistence.Entity;   
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
-
-
-
-import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Cotizador.Cotizador;
 
 @Entity
 @Table(name = "productos")
 public class Producto {
+	
+
+
+
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer idProducto;
-	
-	@Transient
+
+	private String nombre;
 	private double precio;
-	@Transient
+	private String descripcion;
+	private String imagen;
 	private int stock;
-	@Transient
-	private Cotizador cotizador;
 	
 	
-	public Producto(double precio, Cotizador cotizador, int stock ) {
+	public Producto() {
+		super();
+	}
+	
+	public Producto(double precio, int stock ) {
 		this.precio = precio;
-		this.cotizador = cotizador;
+		
 		this.stock = stock;
 	}
 
 
 	public double calcularPrecio() {
-		return cotizador.calcularPrecio(precio);
+		return precio;
 	}
 
 
@@ -53,18 +56,43 @@ public class Producto {
 	}
 
 
-	public Cotizador getCotizador() {
-		return cotizador;
-	}
-
-
-	public void setCotizador(Cotizador cotizador) {
-		this.cotizador = cotizador;
-	}
-
-
 	public void setStock(int stock) {
 		this.stock = stock;
+	}
+
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+
+	public String getImagen() {
+		return imagen;
+	}
+
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
+
+	public Integer getIdProducto() {
+		return idProducto;
+	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	

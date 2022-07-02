@@ -3,13 +3,28 @@ package ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Promociones;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Usuarios.Cliente;
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.ordenCompra.OrdenDeCompra;
 
-public class Membresia implements Promocion {
+
+public class Membresia extends Promocion {
+
 	private List<Cliente> clientesAsociados = new ArrayList<Cliente>();
 	private double descuento;
-	
+
+	public Membresia() {
+		super();
+	}
+
 
 
 	public Membresia(List<Cliente> clientesAsociados, double descuento) {

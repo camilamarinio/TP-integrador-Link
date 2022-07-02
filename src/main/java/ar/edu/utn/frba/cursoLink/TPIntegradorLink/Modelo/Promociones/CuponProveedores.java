@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.ordenCompra.OrdenDeCompra;
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.ordenCompra.Proveedor;
 
-public class CuponProveedores implements Promocion {
+public class CuponProveedores extends Promocion {
 	private Proveedor proveedor;
 	private double porcentajeDescuento;
 	private LocalDate fechaTermino;

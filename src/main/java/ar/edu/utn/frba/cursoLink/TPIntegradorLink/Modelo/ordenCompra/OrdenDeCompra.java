@@ -1,20 +1,49 @@
 package ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.ordenCompra;
 
-import java.time.LocalDate; 
+import java.time.LocalDate;  
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+
+import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Promociones.MedioDePago;
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Promociones.Promocion;
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Usuarios.Cliente;
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Usuarios.Vendedor;
 
+@Entity
+@Table(name = "ordenDeCompra")
 public class OrdenDeCompra {
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer idOrden;
+	
+	@OneToMany
+	@JoinColumn(name= "idOrden")
 	private List<Item> productos = new ArrayList<Item>();
+	
+	@OneToMany
+	@JoinColumn(name= "idOrden")
 	private List<Promocion> promos =  new ArrayList<Promocion>();
+	
+	@ManyToOne
 	private Cliente cliente;
+	
 	private LocalDate fechaOrden;
+	
+	@ManyToOne
 	private Vendedor vendedor;
+	@OneToOne
+	private MedioDePago medioPago;
 	
 	public OrdenDeCompra(Cliente cliente) {
 		super();

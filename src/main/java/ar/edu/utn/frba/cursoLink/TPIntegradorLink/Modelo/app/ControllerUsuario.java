@@ -1,4 +1,4 @@
-package ar.edu.utn.frba.cursoLink.TPIntegradorLink.app;
+package ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.app;
 
 
 import org.springframework.web.bind.annotation.GetMapping; 

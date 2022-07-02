@@ -1,4 +1,4 @@
-package ar.edu.utn.frba.cursoLink.TPIntegradorLink.app;
+package ar.edu.utn.frba.cursoLink.TPIntegradorLink;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
