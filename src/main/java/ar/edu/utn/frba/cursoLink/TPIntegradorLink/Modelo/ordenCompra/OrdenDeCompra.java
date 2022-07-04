@@ -45,6 +45,11 @@ public class OrdenDeCompra {
 	@OneToOne
 	private MedioDePago medioPago;
 	
+	public OrdenDeCompra() {
+		super();
+		
+	}
+
 	public OrdenDeCompra(Cliente cliente) {
 		super();
 		this.cliente = cliente;

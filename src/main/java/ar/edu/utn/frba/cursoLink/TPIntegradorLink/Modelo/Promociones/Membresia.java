@@ -15,9 +15,11 @@ import javax.persistence.Transient;
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Usuarios.Cliente;
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.ordenCompra.OrdenDeCompra;
 
-
+@Entity
 public class Membresia extends Promocion {
 
+	@OneToMany
+	@JoinColumn(name= "idPromocion")
 	private List<Cliente> clientesAsociados = new ArrayList<Cliente>();
 	private double descuento;
 

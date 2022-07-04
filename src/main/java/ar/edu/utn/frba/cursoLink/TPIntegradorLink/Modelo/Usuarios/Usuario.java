@@ -6,22 +6,57 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "usuario")
-class Usuario {
+public class Usuario {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer idUsuario;
-	String nombreUsuario;
+	String nombre;
 	String contrasenia;
-	int minimosCaracPermitidos;
-	int maximosCaracPermitidos;
+	
 	@OneToOne
 	Rol rol;
+
 	
-	public boolean ValidarContrasenia() {
-		return contrasenia.length() >= minimosCaracPermitidos && contrasenia.length() <= maximosCaracPermitidos;
+	
+	public Usuario(String nombre, String contrasenia) {
+		this.nombre = nombre;
+		this.contrasenia = contrasenia;
 	}
+
+	public Usuario() {
+		super();
+		
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getContrasenia() {
+		return contrasenia;
+	}
+
+	public void setContrasenia(String contrasenia) {
+		this.contrasenia = contrasenia;
+	}
+
+	public Rol getRol() {
+		return rol;
+	}
+
+	public void setRol(Rol rol) {
+		this.rol = rol;
+	}
+
+
+	
 	
 	
 

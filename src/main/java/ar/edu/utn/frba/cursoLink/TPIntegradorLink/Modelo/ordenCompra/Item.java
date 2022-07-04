@@ -13,17 +13,23 @@ import javax.persistence.Transient;
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Usuarios.Vendedor; 
 
 @Entity
-@Table(name = "item")
+@Table(name = "items")
 public class Item {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer idItem; 
 	
 	private int cantidadProductos;
 	@OneToOne
-	@JoinColumn(name= "idItem")
+	
 	private Producto producto;
 	
 	
+	
+	public Item() {
+		super();
+	}
+
+
 	public Item(int cantidadProductos, Producto producto, Vendedor vendedor) {
 		
 		if(producto.getStock() < cantidadProductos) {

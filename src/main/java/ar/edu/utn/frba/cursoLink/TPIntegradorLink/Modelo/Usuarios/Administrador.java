@@ -8,9 +8,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "usuario")
-class Administrador {
-	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer idAdmin; 
+class Administrador extends Rol{
+	
 
 	private String nombre;
 	private String Apellido;

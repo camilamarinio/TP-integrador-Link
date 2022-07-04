@@ -1,10 +1,13 @@
 package ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.Promociones;
 import java.time.LocalDate;
 
+import javax.persistence.OneToOne;
+
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.ordenCompra.OrdenDeCompra;
 import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.ordenCompra.Proveedor;
 
 public class CuponProveedores extends Promocion {
+	@OneToOne
 	private Proveedor proveedor;
 	private double porcentajeDescuento;
 	private LocalDate fechaTermino;

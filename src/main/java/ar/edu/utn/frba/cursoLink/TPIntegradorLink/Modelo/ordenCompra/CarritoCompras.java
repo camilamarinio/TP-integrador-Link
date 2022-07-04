@@ -23,10 +23,13 @@ public class CarritoCompras {
 	private List<Item> productos =  new ArrayList<Item>();
 	
 	
-	public void comprar() {
+	
+    
+	public CarritoCompras() {
+		super();
 		
 	}
-    
+
 	public void agregarProductoAlCarrito(Item item) {
 		this.productos.add(item);
 	}

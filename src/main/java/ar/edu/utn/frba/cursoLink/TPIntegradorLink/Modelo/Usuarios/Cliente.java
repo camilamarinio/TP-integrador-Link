@@ -119,9 +119,6 @@ public class Cliente {
 		carritoCompras.agregarProductoAlCarrito(item);
 	}
 	
-	public void comprarCarrito() {
-		carritoCompras.comprar();
-	}
-	
+
 	
 }
