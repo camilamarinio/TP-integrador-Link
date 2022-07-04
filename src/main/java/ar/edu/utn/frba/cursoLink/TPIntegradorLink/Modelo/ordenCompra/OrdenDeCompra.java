@@ -45,6 +45,8 @@ public class OrdenDeCompra {
 	@OneToOne
 	private MedioDePago medioPago;
 	
+	
+	
 	public OrdenDeCompra() {
 		super();
 		
@@ -110,6 +112,42 @@ public class OrdenDeCompra {
 
 	public Cliente getCliente() {
 		return this.cliente;
+	}
+
+	public List<Item> getProductos() {
+		return productos;
+	}
+
+	public void setProductos(List<Item> productos) {
+		this.productos = productos;
+	}
+
+	public List<Promocion> getPromos() {
+		return promos;
+	}
+
+	public void setPromos(List<Promocion> promos) {
+		this.promos = promos;
+	}
+
+	public MedioDePago getMedioPago() {
+		return medioPago;
+	}
+
+	public void setMedioPago(MedioDePago medioPago) {
+		this.medioPago = medioPago;
+	}
+
+	public Vendedor getVendedor() {
+		return vendedor;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public void setFechaOrden(LocalDate fechaOrden) {
+		this.fechaOrden = fechaOrden;
 	}
 	
 

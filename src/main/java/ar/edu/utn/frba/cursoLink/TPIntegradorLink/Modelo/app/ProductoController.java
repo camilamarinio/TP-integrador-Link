@@ -22,12 +22,6 @@ public class ProductoController {
 	@Autowired
 	RepoProducto repoProducto;
 	
-	@RequestMapping(method = RequestMethod.POST , value= "/producto/{producto}/agregar")
-	public @ResponseBody String agregarProducto(@PathVariable("producto") Producto productoId) {
-		
-		
-		return "ok";
-	}
 
 	
 
