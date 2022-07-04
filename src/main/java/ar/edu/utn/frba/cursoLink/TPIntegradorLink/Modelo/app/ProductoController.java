@@ -21,13 +21,13 @@ public class ProductoController {
 	
 	@Autowired
 	RepoProducto repoProducto;
-	/*
-	@RequestMapping(method = RequestMethod.GET , value= "/producto/{productoId}/precio")
-	public @ResponseBody String  calcularPrecio(@PathVariable("productoId") Integer productoId) {
-		Optional<Producto> opcionalProducto = repoProducto.findById(productoId);
+	
+	@RequestMapping(method = RequestMethod.POST , value= "/producto/{producto}/agregar")
+	public @ResponseBody String agregarProducto(@PathVariable("producto") Producto productoId) {
+		
 		
 		return "ok";
-	}*/
+	}
 
 	
 

@@ -11,4 +11,5 @@ import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.ordenCompra.OrdenDeComp
 @RepositoryRestResource(path = "ordenDeCompra")
 public interface RepoOrdenDeCompra extends PagingAndSortingRepository<OrdenDeCompra, Integer>{
 
+	
 }
