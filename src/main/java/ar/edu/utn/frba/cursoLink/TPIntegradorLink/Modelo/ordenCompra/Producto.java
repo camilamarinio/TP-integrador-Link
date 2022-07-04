@@ -26,11 +26,19 @@ public class Producto {
 		super();
 	}
 	
-	public Producto(double precio, int stock ) {
+	
+
+
+	public Producto(String nombre, double precio, String descripcion, String imagen, int stock) {
+		super();
+		this.nombre = nombre;
 		this.precio = precio;
-		
+		this.descripcion = descripcion;
+		this.imagen = imagen;
 		this.stock = stock;
 	}
+
+
 
 
 	public double calcularPrecio() {

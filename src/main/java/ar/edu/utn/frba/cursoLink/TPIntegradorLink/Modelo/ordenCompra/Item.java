@@ -31,7 +31,7 @@ public class Item {
 	}
 
 
-	public Item(int cantidadProductos, Producto producto, Vendedor vendedor) {
+	public Item(int cantidadProductos, Producto producto) {
 		
 		if(producto.getStock() < cantidadProductos) {
 			throw new NoHayStockExeption("No hay suficiontes productos en stock");

@@ -24,4 +24,6 @@ public interface RepoProducto extends PagingAndSortingRepository<Producto, Integ
 	void delete(Producto entity);
 	
 	
+	
+	
 }

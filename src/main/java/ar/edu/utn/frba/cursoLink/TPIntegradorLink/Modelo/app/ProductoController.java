@@ -22,7 +22,10 @@ public class ProductoController {
 	@Autowired
 	RepoProducto repoProducto;
 	
-
+	public void cargaProductos() {
+		repoProducto.save(new Producto("Motorola G51",50000.0,"128 GB , 4GB RAM , 3 camaras","https://olmoshogar.com.ar/wp-content/uploads/2022/05/CELU-MOTO-G51-DORADO.jpg",10 ));
+	}
+	
 	
 
 }

@@ -30,7 +30,7 @@ import ar.edu.utn.frba.cursoLink.TPIntegradorLink.Modelo.ordenCompra.Proveedor;
 
 
 
-
+/*
 
 public class TestOrdenDeCompra {
 	
@@ -40,8 +40,7 @@ public class TestOrdenDeCompra {
 	OrdenDeCompra orden1 = new OrdenDeCompra(camila);
 	OrdenDeCompra orden2 = new OrdenDeCompra(camila);
 	
-	Producto producto1 = new Producto(1000,10);
-	Producto producto2 = new Producto(1000,7);
+	
 	
 	Vendedor vendedor1 = new Vendedor("juan" , "perez" , TipoDocumento.DNI , 7589372);
 
@@ -185,4 +184,4 @@ public class TestOrdenDeCompra {
 		orden1.agregarPromo(promoMembre1);
 	}
 	
-}
+}*/
